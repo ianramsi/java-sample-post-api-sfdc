@@ -105,7 +105,7 @@ public class Main {
             httpPost.addHeader(prettyHeader);
             httpPost.addHeader("Content-Type","application/json");
             //JSON POST BODY
-            StringEntity params = new StringEntity ("{\"delivery_status__c\":\"Delivered\",\"ref_id__c\":\"00QN00000019Q3tTESTFROMJAVA\",\"code_sms__c\":\"938A9DC058855A1CA6ACACBROTBROT\",\"Mobile_Phone__c\":\"08123435343\" }");
+            StringEntity params = new StringEntity ("{\"delivery_status__c\":\"Delivered\",\"ref_id__c\":\"FromManualRestClient03\",\"code_sms__c\":\"938A9DC058855A1CADUHTBROTBRET\",\"Mobile_Phone__c\":\"08111582164\" }");
             httpPost.setEntity(params);
 
             //execute post
@@ -114,7 +114,7 @@ public class Main {
             //the result
             int statusCode = response1.getStatusLine().getStatusCode();
 
-            if (statusCode !=HttpStatus.SC_CREATED){
+            if (statusCode == HttpStatus.SC_CREATED){
                 String response_Ok = EntityUtils.toString(response1.getEntity());
                 System.out.println("Return 201 --> " +response_Ok);
             }else {String response_Nok = EntityUtils.toString(response1.getEntity());
